@@ -9,7 +9,6 @@ const mostrarMenu = () => {
     console.log("==============".green);
     console.log("seleccione una opcion".green);
     console.log("==============\n".green);
-
     console.log(`${"1".green}. crear una tarea`);
     console.log(`${"2".green}. listar tareas`);
     console.log(`${"3".green}. listar tareas completadas`);
