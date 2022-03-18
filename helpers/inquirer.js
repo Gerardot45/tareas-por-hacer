@@ -1,4 +1,5 @@
 const elInquirer = require("inquirer"); //inquirer trabaja bajo promesas
+
 require("colors");
 
 //preguntas que nos pedirá el prompt de la variable 'inquirer'
@@ -52,6 +53,39 @@ const inquirerMenu = async () => {
   return opcion;
 };
 
+const pausa = async () => {
+  const entrada = [
+    {
+      type: "input",
+      name: "enter",
+      messsage: `Presione ${"enter".gree} para continuar`,
+    },
+  ];
+  console.log("\n");
+  await elInquirer.prompt(entrada);
+};
+
+const leerInput = async (message) => {
+  const question = [
+    {
+      type: "input",
+      name: "desc",
+      message,
+      validate(value) {
+        if (this.value.length === 0) {
+          return "Por favor ingrese un valor";
+        }
+        return true;
+      },
+    },
+  ];
+
+  const { desc } = await elInquirer.prompt(question);
+  return desc;
+};
+
 module.exports = {
   inquirerMenu,
+  pausa,
+  leerInput,
 };
