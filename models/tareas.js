@@ -13,7 +13,7 @@ class Tareas {
   }
 
   crearTarea(desc = "") {
-    const tarea = new Tarea();
+    const tarea = new Tarea(desc);
     this._listado[tarea.id] = tarea;
   }
 }

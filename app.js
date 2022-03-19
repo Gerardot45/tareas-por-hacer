@@ -16,7 +16,7 @@ const main = async () => {
       case "1":
         //crear la tareas
         const desc = await leerInput("Descripcion:");
-        console.log();
+        tareas.crearTarea(desc);
         break;
       case "2":
         console.log(tareas._listado);

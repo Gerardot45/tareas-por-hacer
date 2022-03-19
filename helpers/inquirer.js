@@ -72,7 +72,7 @@ const leerInput = async (message) => {
       name: "desc",
       message,
       validate(value) {
-        if (this.value.length === 0) {
+        if (value.length === 0) {
           return "Por favor ingrese un valor";
         }
         return true;
@@ -81,6 +81,7 @@ const leerInput = async (message) => {
   ];
 
   const { desc } = await elInquirer.prompt(question);
+  console.log(desc);
   return desc;
 };
 
